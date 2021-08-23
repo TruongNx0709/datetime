@@ -9,9 +9,6 @@ public class datetime {
         System.out.println(date[0]);
         System.out.println(date[1]);
         System.out.println(date[2]);
-        System.out.println(date[3]);
-        System.out.println(date[4]);
-        System.out.println(date[5]);
     }
 
     // kiểm tra năm nhuận
@@ -69,7 +66,6 @@ public class datetime {
         int hour = 1;
         int minus = 1;
         int second = 1;
-        long seconds = timestamp + 1;
         while (timestamp >= getSecondsFromYear(year)) {
             timestamp -= getSecondsFromYear(year);
             year++;
@@ -82,19 +78,7 @@ public class datetime {
             timestamp -= SENCONDS_OF_DAY;
             day++;
         }
-        while (timestamp > 0) {
-            timestamp -= 360;
-            hour++;
-        }
-        while (timestamp > 0) {
-            timestamp -= 60;
-            minus++;
-        }
-        while (timestamp > 0) {
-            timestamp -= 0;
-            second++;
-        }
-        return new int[]{day, month, year, hour,minus,second};
+        return new int[]{day, month, year};
     }
 }
 
